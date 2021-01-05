@@ -24,8 +24,11 @@ const renderTemplate = (list)=>{
     <div class="middle-info">
       <div class="info">
         <span class="name">${list.company}</span>
-        <span class="new">NEW!</span>
-        <span class="featured">FEATURED</span>
+        ${list.new === true ?  `<span class="new">NEW!</span>` : ''
+        }
+        ${list.featured === true ?  `<span class="featured">FEATURED</span>` : ''
+        }
+
       </div>
 
       <p class="job-title">${list.position}</p>
@@ -43,9 +46,9 @@ const renderTemplate = (list)=>{
     <div class="mid-line"></div>
 
     <div class="tags">
-      <span class="tag-span1">JavaScript</span>
-      <span class="tag-span2">HTML</span>
-      <span class="tag-span3">CSS</span>
+      ${list.languages[0] ? `<span class="tag-span1">${list.languages[0]}</span>` : ''}
+      ${list.languages[1] ? `<span class="tag-span1">${list.languages[1]}</span>` : ''}
+      ${list.languages[2] ? `<span class="tag-span1">${list.languages[2]}</span>` : ''}
     </div>
 
   </div>`
