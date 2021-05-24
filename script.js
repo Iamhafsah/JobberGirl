@@ -78,8 +78,12 @@ const renderTemplate = (list)=>{
     while (main.hasChildNodes()) {  
       main.removeChild(main.firstChild);
     }
-    searchResult.map(renderTemplate)
-    
+    // TODO: create a condition that shows an alert when nothing is rendered on the page.
+    if (searchResult === [] ){
+      window.alert(`${value} matches non of the existing jobs`)
+    }else{
+      searchResult.map(renderTemplate)
+    }
   }
 
 
